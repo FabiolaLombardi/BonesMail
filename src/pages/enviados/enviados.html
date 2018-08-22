@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title> Mensajes Enviados</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let correo of listaDeCorreos" [navPush]="detallePage" [navParams]=correo detail-none (press)="delete(correo)">
+      <ion-avatar item-left>
+        <img src="../../assets/imgs/{{correo.imagen}}" alt="">
+      </ion-avatar>
+      <h2>From: {{correo.nombre}}</h2>
+      <h3>Asunto: {{correo.asunto}}</h3>
+      <p>{{correo.mensaje}}</p>
+    </button>
+  </ion-list>
+</ion-content>

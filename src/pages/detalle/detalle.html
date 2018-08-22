@@ -1,0 +1,59 @@
+<ion-header>
+
+        <ion-navbar>
+          <ion-title>Detalles</ion-title>
+        </ion-navbar>
+      
+</ion-header>
+
+<ion-content padding>
+  <h2>Asunto: {{item.asunto}}</h2>
+  <hr>
+  <ion-item>  
+    <ion-avatar item-left >
+      <img src="../../assets/imgs/{{item.imagen}}" alt="">
+    </ion-avatar>
+    <h2>De: {{item.nombre}}</h2>
+    <h3>{{item.fecha}}</h3>
+  </ion-item>
+  <p [innerHTML]="item.mensaje">{{item.mensaje}}</p>
+  
+  </ion-content>
+
+<ion-footer>
+    <ion-item-divider>
+        <ion-row>
+            <ion-col>
+               <button ion-button clear (click)="mostrarModal('Reply')">
+                 <div>
+               <ion-icon name="ios-undo-outline"></ion-icon>
+               <br>
+               <label>Replay</label> 
+               </div>
+              </button>
+            </ion-col>
+            <ion-col>
+                <button ion-button clear (click)="mostrarModal('Reply All')">
+                  <div>
+                <ion-icon name="ios-undo-outline"></ion-icon>
+                <ion-icon name="ios-undo-outline"></ion-icon>
+                <br>
+                <label>Reply All</label>
+                </div>
+              </button>
+              </ion-col>
+              <ion-col>
+                  <button ion-button clear (click)="mostrarModal('Forward')">
+                    <div>
+                      <ion-icon name="ios-redo-outline"></ion-icon>
+                      <br>
+                     <label> Forward </label>
+                     </div>
+                  </button>
+                </ion-col>
+          </ion-row>
+  </ion-item-divider>
+  </ion-footer>
+
+    
+      

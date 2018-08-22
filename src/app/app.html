@@ -1,0 +1,27 @@
+<ion-menu [content]="nav">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button ion-item (click)="irAPagina(inboxPage)">
+                <ion-icon name="mail" item-left></ion-icon>
+                Inbox
+                <ion-badge item-right color="dark"></ion-badge>
+            </button>
+            <button ion-item (click)="irAPagina(enviadosPage)">
+                <ion-icon name="send" item-left></ion-icon>
+                Mensajes Enviados
+                <ion-badge item-right color="dark">{{noLeidos}}</ion-badge>
+            </button>
+            <button ion-item (click)="irAPagina(eliminadosPage)">
+                <ion-icon name="trash" item-left></ion-icon>
+                Mensajes Eliminados
+                <ion-badge item-right color="dark"></ion-badge>
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #nav></ion-nav>
